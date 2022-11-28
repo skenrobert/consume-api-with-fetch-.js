@@ -1,12 +1,24 @@
 
 
 const API_URL ='http://localhost/miggo-accountant-back/public/api';
-// var array_valor = [];
-//let valor = new Array();
+const Data={
+        name:'',
+        id:''
+};
+//optional parameters
+const othePram = {
+    headers:{
+        "content-type":"application/json; charset=UTF-8"
+    },
+    body:Data,
+    method:"GET"
+};
+
 
 const HTMLResponse = document.querySelector("#contenido");
 const ul = document.createDocumentFragment('ul');
 
+      //  fetch(API_URL+'/users',othePram)
         fetch(API_URL+'/users')
        .then(response => response.json())
        .then(data =>{ 
@@ -27,4 +39,5 @@ const ul = document.createDocumentFragment('ul');
              document.getElementById('contenido').innerHTML += usuario.username;
 //              array_valor.push(trm);
            }*/
-});
+})
+.catch(error => console.error(error));
