@@ -13,17 +13,32 @@ fetch(API_URL+id)
     const email =document.createElement('p');
     email.innerHTML = data.data.email;
     const eliminar = document.createElement('p');
-    eliminar.innerHTML = data.data.id;
-    aplicacion.appendChild(username); 
-    aplicacion.appendChild(email);
-    eliminar.addEventListener('click', function(){
-       // window.location.href = './usuario.html?id='+usuario.id
-       console.log('borrar');
-       //a href :TODO crear la url y agregarla al href de la etiqueta a
+   eliminar.innerHTML = data.data.id;
+   
+   const button = document.createElement('button'); 
+   button.type = 'button'; 
+   button.innerText = 'Haz Click'; 
+  
+
+   button.addEventListener('click', function(){
+        //window.location.href = 'API_URL'+id;
+       alert(DELETE);
+
+       fetch(API_URL+id, {
+             method: 'DELETE',
+                })
+      .then(res => res.json())
+      .then(res=> {
+        console.log(res);
+        window.location.href = 'http://localhost/testfrontend/';
+
+       });
     })
-    aplicacion.appendChild(eliminar);
 
-
+   aplicacion.appendChild(username); 
+   aplicacion.appendChild(email);
+   aplicacion.appendChild(eliminar);
+   aplicacion.appendChild(button);
 
  })
 .catch(error => console.error(error));
