@@ -22,7 +22,6 @@ fetch(API_URL+id)
 
    button.addEventListener('click', function(){
         //window.location.href = 'API_URL'+id;
-       alert(DELETE);
 
        fetch(API_URL+id, {
              method: 'DELETE',

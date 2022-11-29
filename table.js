@@ -1,3 +1,8 @@
+//<input type="button" value="Genera una tabla" onclick="genera_tabla()">
+//<script language="JavaScript" type="text/javascript" src="table.js"></script>
+
+
+
 function genera_tabla() {
     // Obtener la referencia del elemento body
    // var body = document.getElementsByTagName("table")[0];
